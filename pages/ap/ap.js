@@ -1,15 +1,6 @@
-// pages/hi/hi.js
+// pages/ap/ap.js
 Page({
-  goInvoice:function(){
-    wx.navigateTo({
-      url: '/pages/ap/ap',
-    })
-  },
-  scanInvoice:function(){
-    wx.navigateTo({
-      url: '/pages/scan/scan',
-    })
-  },
+
   /**
    * 页面的初始数据
    */

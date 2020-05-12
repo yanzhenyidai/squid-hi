@@ -1,9 +1,11 @@
 {
   "pages": [
-    "pages/index/index",
     "pages/hi/hi",
+    "pages/index/index",
     "pages/logs/logs",
-    "pages/tabbar/tabbar"
+    "pages/form/form",
+    "pages/scan/scan",
+    "pages/ap/ap"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -14,18 +16,25 @@
   "style": "v2",
   "sitemapLocation": "sitemap.json",
   "tabBar": {
-    "list": [{
-      "pagePath": "pages/index/index",
-      "text": "发票",
-      "iconPath": "/pages/images/icon_tabbar.png",
-      "selectedIconPath": "/pages/images/icon_tabbar.png"
-    },
-    {
-      "pagePath": "pages/hi/hi",
-      "text": "个人信息",
-      "iconPath": "/pages/images/icon_tabbar.png",
-      "selectedIconPath": "/pages/images/icon_tabbar.png"
-    }
-  ]
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "发票",
+        "iconPath": "/pages/images/icon_tabbar.png",
+        "selectedIconPath": "/pages/images/icon_tabbar.png"
+      },
+      {
+        "pagePath": "pages/form/form",
+        "text": "表单信息",
+        "iconPath": "/pages/images/icon_tabbar.png",
+        "selectedIconPath": "/pages/images/icon_tabbar.png"
+      },
+      {
+        "pagePath": "pages/hi/hi",
+        "text": "个人信息",
+        "iconPath": "/pages/images/icon_tabbar.png",
+        "selectedIconPath": "/pages/images/icon_tabbar.png"
+      }
+    ]
   }
 }
