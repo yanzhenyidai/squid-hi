@@ -1,2 +1,19 @@
-<!--pages/ap/ap.wxml-->
-<text>pages/ap/ap.wxml</text>
+
+<mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+
+<mp-form-page title="发票信息">
+    <mp-form id="apForm">
+        <view wx:for="{{result}}" wx:key="{{item}}">
+          <mp-cells title="购方公司：XXXX公司" footer="">
+              <mp-cell prop="invNumber" title="发票号码" ext-class="">
+                  <text class="weui-text">{{item.invNumber}}</text>
+                  <!-- <input bindinput="formInputChange" data-field="name" class="weui-input" placeholder="请输入姓名"/> -->
+              </mp-cell>
+              <mp-cell prop="invCode" title="发票代码" ext-class="">
+                  <text class="weui-text">{{item.invCode}}</text>
+                  <!-- <input bindinput="formInputChange" data-field="qq" class="weui-input" placeholder="请输入qq"/> -->
+              </mp-cell>
+          </mp-cells>
+        </view>
+    </mp-form>
+</mp-form-page>

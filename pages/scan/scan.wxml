@@ -1,33 +1,31 @@
-
 <mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
 
 <mp-form-page title="扫描发票" subtitle="扫描发票二维码信息进行关键信息提取">
     <mp-form id="form" models="{{formData}}">
         <mp-cells title="信息" footer="测试版本">
             <mp-cell prop="invNumber" title="发票号码" ext-class="">
-                <input data-field="invNumber" class="weui-input" placeholder="发票号码" value="{{result[3]}}"/>
+                <input name="invNumber" data-field="invNumber" class="weui-input" placeholder="发票号码" value="{{result[3]}}"/>
             </mp-cell>
             <mp-cell prop="invCode" title="发票代码" ext-class="">
-                <input class="weui-input" placeholder="发票代码" value="{{result[2]}}"/>
+                <input name="invCode" class="weui-input" placeholder="发票代码" value="{{result[2]}}"/>
             </mp-cell>
             <mp-cell prop="invAmount" title="开票金额" ext-class=" weui-cell_vcode">
-                <input class="weui-input" placeholder="开票金额" value="{{result[4]}}"/>
+                <input name="invAmount" class="weui-input" placeholder="开票金额" value="{{result[4]}}"/>
             </mp-cell>
             <mp-cell prop="checkCode" title="校验码" ext-class=" weui-cell_vcode">
-                <input class="weui-input" placeholder="校验码" value="{{result[6]}}"/>
+                <input name="checkCode" class="weui-input" data-field="checkCode" placeholder="校验码" value="{{result[6]}}"/>
             </mp-cell>
             <mp-cell prop="date" title="日期" ext-class="">
-             <input class="weui-input" placeholder="日期" value="{{result[5]}}"/>
+             <input name="invDate" class="weui-input" placeholder="日期" value="{{result[5]}}"/>
                 <!-- <picker data-field="date" mode="date" value="{{result[5]}}" bindchange="bindDateChange">
                     <view class="weui-input">{{date}}</view>
                 </picker> -->
             </mp-cell>
         </mp-cells>
-    </mp-form>
 
-    
-    <view slot="button">
-        <button class="weui-btn" type="primary" bindtap="scanCode">扫一扫</button>
-        <button class="weui-btn" type="primary" form-type="submit" bindtap="saveInvoice">Submit</button>
-    </view>
+         <view slot="button">
+            <button class="weui-btn" type="primary" bindtap="scanCode">扫一扫</button>
+            <button class="weui-btn" type="primary" bindtap="formSubmit">提交</button>
+        </view>
+    </mp-form>
 </mp-form-page>

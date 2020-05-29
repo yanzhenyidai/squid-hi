@@ -7,8 +7,7 @@ Page({
   },
 
   data: {
-    result: [],
-    formData: {}
+    result: []
   },
 
   scanCode() {
@@ -18,18 +17,40 @@ Page({
         let invoice = res.result.split(",")
         that.setData({
           result: invoice
+          // [`formData.invDate`]: "123123123"
         })
       },
       fail() {}
     })
   },
-  saveInvoice:function(e){
-     console.log(e);
-  },
-  bindDateChange: function (e) {
-    this.setData({
-        date: e.detail.value,
-        [`formData.date`]: e.detail.value
+
+  formSubmit:function(e){
+    var _this = this;
+
+    wx.request({
+      url: 'http://sodolike.vaiwan.com/invoice/save',
+      method: 'POST',
+      data:{
+        'invNumber': this.data.result[3],
+        'invType': this.data.result[0],
+        'invDate': this.data.result[5],
+        'invCode': this.data.result[2],
+        'checkCode': this.data.result[6],
+        'invAmount': this.data.result[4]
+      },
+      success:function(data){
+        wx.showToast({
+          title: '成功',
+          success: res => {
+            _this.onLoad();
+          }
+        })
+      }
     })
   }
+
+  ,onLoad: function (options) {
+      
+  }
+
 })

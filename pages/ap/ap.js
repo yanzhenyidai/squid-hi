@@ -1,11 +1,11 @@
 // pages/ap/ap.js
 Page({
-
+  
   /**
    * 页面的初始数据
    */
   data: {
-
+    result: []
   },
 
   /**
@@ -13,6 +13,19 @@ Page({
    */
   onLoad: function (options) {
 
+    wx.request({
+      url: 'http://sodolike.vaiwan.com/invoice/findAll',
+      method: 'POST',
+      success: res => {
+        this.setData({
+          result: res.data
+        });
+
+        // this.setData.result = res.data;
+        // _this.data.result = res.data;
+        // that.data.result = res.data;
+      }
+    })
   },
 
   /**

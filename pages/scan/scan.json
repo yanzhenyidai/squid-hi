@@ -1,7 +1,7 @@
 
 {
   "component": true,
-  "navigationBarTitleText": "text",
+  "navigationBarTitleText": "扫描发票",
   "usingComponents": {
     "mp-form-page": "../../components/form-page/form-page",
     "mp-toptips": "../../components/toptips/toptips",
