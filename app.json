@@ -20,20 +20,20 @@
       {
         "pagePath": "pages/index/index",
         "text": "发票",
-        "iconPath": "/pages/images/icon_tabbar.png",
-        "selectedIconPath": "/pages/images/icon_tabbar.png"
+        "iconPath": "/pages/images/index/manage.png",
+        "selectedIconPath": "/pages/images/index/manage.png"
       },
       {
         "pagePath": "pages/form/form",
         "text": "表单信息",
-        "iconPath": "/pages/images/icon_tabbar.png",
-        "selectedIconPath": "/pages/images/icon_tabbar.png"
+        "iconPath": "/pages/images/index/form.png",
+        "selectedIconPath": "/pages/images/index/form.png"
       },
       {
         "pagePath": "pages/hi/hi",
         "text": "个人信息",
-        "iconPath": "/pages/images/icon_tabbar.png",
-        "selectedIconPath": "/pages/images/icon_tabbar.png"
+        "iconPath": "/pages/images/index/mine.png",
+        "selectedIconPath": "/pages/images/index/mine.png"
       }
     ]
   }

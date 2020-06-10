@@ -14,6 +14,8 @@ Page({
     const that = this
     wx.scanCode({
       success(res) {
+        console.log(res);
+
         let invoice = res.result.split(",")
         that.setData({
           result: invoice
