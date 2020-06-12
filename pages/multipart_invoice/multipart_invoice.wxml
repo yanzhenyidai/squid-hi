@@ -1,0 +1,80 @@
+<view class="page">
+    <!-- <view class="page__hd">
+        <view class="page__title">识别发票结果</view>
+        <view class="page__desc">发票预览</view>
+    </view> -->
+    <view class="page__bd">
+        <a class="weui-form-a" bindtap="details">
+        <view class="weui-form-preview">
+            <view class="weui-form-preview__hd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">增值税专用发票</view>
+                    <view class="weui-form-preview__value_in-hd"></view>
+                </view>
+            </view>
+            <view class="weui-form-preview__bd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">发票号码</view>
+                    <view class="weui-form-preview__value">80353081</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">发票代码</view>
+                    <view class="weui-form-preview__value">031001900411</view>
+                </view>
+                 <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">发票日期</view>
+                    <view class="weui-form-preview__value">2019-11-11</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">购方名称</view>
+                    <view class="weui-form-preview__value">上海哲骧信息技术有限公司</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">购方税号</view>
+                    <view class="weui-form-preview__value">91310115590435863N</view>
+                </view>
+                <!-- <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">购方地址、电话</view>
+                    <view class="weui-form-preview__value">上海市浦东新区盛夏路570号602室</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">购方银行账号</view>
+                    <view class="weui-form-preview__value">建行上海高科路支行31001661315050003958</view>
+                </view> -->
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">销方名称</view>
+                    <view class="weui-form-preview__value">上海滴滴畅行科技有限公司</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">销方税号</view>
+                    <view class="weui-form-preview__value">91310114MA1GW61J6U</view>
+                </view>
+                <!-- <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">销方地址、电话</view>
+                    <view class="weui-form-preview__value">上海市嘉定区安亭镇杭桂路1112号6层607-608室022-59002850</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">销方银行账号</view>
+                    <view class="weui-form-preview__value">招商银行股份有限公司上海东方支行121932981110606</view>
+                </view> -->
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">金额</view>
+                    <view class="weui-form-preview__value">71.94</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">税额</view>
+                    <view class="weui-form-preview__value">2.16</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">价税合计</view>
+                    <view class="weui-form-preview__value">74</view>
+                </view>
+                
+            </view>
+            <!-- <view class="weui-form-preview__ft">
+                <navigator url="" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">查看影像</navigator>
+            </view> -->
+        </view>
+        </a>
+    </view>
+</view>

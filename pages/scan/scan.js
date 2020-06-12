@@ -34,10 +34,10 @@ Page({
       method: 'POST',
       data:{
         'invNumber': this.data.result[3],
-        'invType': this.data.result[0],
+        'invType': this.data.result[1],
         'invDate': this.data.result[5],
         'invCode': this.data.result[2],
-        'checkCode': this.data.result[6],
+        'invCheckCode': this.data.result[6],
         'invAmount': this.data.result[4]
       },
       success:function(data){

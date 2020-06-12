@@ -1,11 +1,13 @@
 {
   "pages": [
+    "pages/multipart_invoice/multipart_invoice",
     "pages/index/index",
-    "pages/hi/hi", 
+    "pages/hi/hi",
     "pages/logs/logs",
     "pages/form/form",
     "pages/scan/scan",
-    "pages/ap/ap"
+    "pages/ap/ap",
+    "pages/ap_invoice/ap_invoice"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -23,11 +23,17 @@
               </view>
               <view class="weui-grid__label">销项发票</view>
             </a>
+            <a class="weui-grid" bindtap="camera">
+              <view class="weui-grid__icon">
+                <image src="../images/index/camera.png" alt></image>
+              </view>
+              <view class="weui-grid__label">多票识别</view>
+            </a>
             <a class="weui-grid">
               <view class="weui-grid__icon">
                 <image src="../images/index/report.png" alt></image>
               </view>
-              <view class="weui-grid__label">报表</view>
+              <view class="weui-grid__label">图表</view>
             </a>
             <a class="weui-grid">
               <view class="weui-grid__icon">
@@ -40,6 +46,12 @@
                 <image src="../images/index/history.png" alt></image>
               </view>
               <view class="weui-grid__label">历史信息</view>
+            </a>
+            <a class="weui-grid" bindtap="goTest">
+              <view class="weui-grid__icon">
+                <image src="../images/index/test.png" altestt></image>
+              </view>
+              <view class="weui-grid__label">调试</view>
             </a>
             <!-- <a class="weui-grid">
               <view class="weui-grid__icon">

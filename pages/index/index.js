@@ -1,20 +1,63 @@
 // pages/hi/hi.js
 Page({
-  goInvoice:function(){
+  goTest: function(){
     wx.navigateTo({
-      url: '/pages/ap/ap',
+      url: '/pages/multipart_invoice/multipart_invoice',
     })
   },
-  scanInvoice:function(){
+  goInvoice: function(){
+    wx.navigateTo({
+      url: '/pages/ap_invoice/ap_invoice',
+    })
+  },
+  scanInvoice: function(){
     wx.navigateTo({
       url: '/pages/scan/scan',
     })
   },
+ camera: function(){
+  const that = this;
+
+  wx.chooseImage({
+    count: 1,
+    sizeType: ['original', 'compressed'],
+    sourceType: ['album', 'camera'],
+    success (res) {      
+      // tempFilePath可以作为img标签的src属性显示图片
+      const tempFilePaths = res.tempFilePaths;
+      wx.showLoading({
+        title: '识别中',
+        success: res1 => {
+          wx.getFileSystemManager().readFile({
+            filePath: tempFilePaths[0],
+            encoding: 'base64',
+            success: res => {
+                wx.request({
+                  url: 'http://sodolike.vaiwan.com/ocr/glority',
+                  method: 'POST',
+                  data: {
+                    'base64Img': res.data
+                  },
+                  success: res2 => {
+      
+                    wx.navigateTo({
+                      url: '/pages/multipart_invoice/multipart_invoice?id='+res2.data.id,
+                    })
+                  }
+                })
+            }
+          });
+        }
+      })
+    }
+  })
+ },
+
   /**
    * 页面的初始数据
    */
   data: {
-
+    base64Img: ''
   },
 
   /**

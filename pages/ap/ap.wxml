@@ -4,7 +4,7 @@
 <mp-form-page title="发票信息">
     <mp-form id="apForm">
         <view wx:for="{{result}}" wx:key="{{item}}">
-          <mp-cells title="{{item.companyName}}" footer="" bindtap="alert(1);">
+          <mp-cells title="{{item.companyName}}" footer="">
               <mp-cell prop="invNumber" title="发票号码" ext-class="">
                   <text class="weui-text">{{item.invNumber}}</text>
                   <!-- <input bindinput="formInputChange" data-field="name" class="weui-input" placeholder="请输入姓名"/> -->
