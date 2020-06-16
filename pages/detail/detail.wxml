@@ -1,0 +1,264 @@
+<view class="page" data-weui-theme="{{theme}}">
+
+<mp-tabs 
+  tabs="{{tabs}}" 
+  activeTab="{{activeTab}}" 
+  swiperClass="weui-tabs-swiper"
+  bindtabclick="onTabClick"
+  bindchange="onChange"
+  activeClass="tab-bar-title__selected"
+>
+
+  <block wx:for="{{tabs}}">
+    <view class="tab-content" data-set="{{item}}" slot="tab-content-{{index}}" bind:tap="handleClick" >
+      <image src="{{item.img}}" mode="widthFix"></image>
+      <!-- <view class="item-title">
+        {{item.title2}}
+      </view> -->
+      <view class="item-desc">
+        <view class="weui-form-preview">
+            <!-- <view class="weui-form-preview__hd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">增值税专用发票</view>
+                    <view class="weui-form-preview__value_in-hd"></view>
+                </view>
+            </view> -->
+            
+            <!-- 增值税票-->
+            <view class="weui-form-preview__bd" wx:if="{{item.title1 == 1 || item.title1 == 4 || item.title1 == 10}}">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">发票号码</view>
+                    <view class="weui-form-preview__value">{{item.data.invNumber}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">发票代码</view>
+                    <view class="weui-form-preview__value">{{item.data.invCode}}</view>
+                </view>
+                 <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">发票日期</view>
+                    <view class="weui-form-preview__value">{{item.data.invDate}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">购方名称</view>
+                    <view class="weui-form-preview__value">{{item.data.companyName}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">购方税号</view>
+                    <view class="weui-form-preview__value">{{item.data.companyTaxCode}}</view>
+                </view>
+                <!-- <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">购方地址、电话</view>
+                    <view class="weui-form-preview__value">上海市浦东新区盛夏路570号602室</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">购方银行账号</view>
+                    <view class="weui-form-preview__value">建行上海高科路支行31001661315050003958</view>
+                </view> -->
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">销方名称</view>
+                    <view class="weui-form-preview__value">{{item.data.vendorName}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">销方税号</view>
+                    <view class="weui-form-preview__value">{{item.data.vendorTaxCode}}</view>
+                </view>
+                <!-- <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">销方地址、电话</view>
+                    <view class="weui-form-preview__value">上海市嘉定区安亭镇杭桂路1112号6层607-608室022-59002850</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">销方银行账号</view>
+                    <view class="weui-form-preview__value">招商银行股份有限公司上海东方支行121932981110606</view>
+                </view> -->
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">金额</view>
+                    <view class="weui-form-preview__value">{{item.data.invAmount}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">税额</view>
+                    <view class="weui-form-preview__value">{{item.data.invTax}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">价税合计</view>
+                    <view class="weui-form-preview__value">{{item.data.invTotalAmount}}</view>
+                </view>
+            </view>
+
+            <!-- 机票-->
+            <view class="weui-form-preview__bd" wx:if="{{item.title1 == 10506}}">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">乘机人姓名</view>
+                    <view class="weui-form-preview__value">{{item.data.companyName}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">身份证号</view>
+                    <view class="weui-form-preview__value">{{item.data.companyTaxCode}}</view>
+                </view>
+                 <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">电子客票号码</view>
+                    <view class="weui-form-preview__value">{{item.data.invNumber}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">验证码</view>
+                    <view class="weui-form-preview__value">{{item.data.invCheckCode}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">填开日期</view>
+                    <view class="weui-form-preview__value">{{item.data.invDate}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">销售单位代号</view>
+                    <view class="weui-form-preview__value">{{item.data.vendorCode}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">填开单位</view>
+                    <view class="weui-form-preview__value">{{item.data.vendorName}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">票价</view>
+                    <view class="weui-form-preview__value">{{item.data.invAmount}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">税费</view>
+                    <view class="weui-form-preview__value">{{item.data.invTax}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">总额</view>
+                    <view class="weui-form-preview__value">{{item.data.invTotalAmount}}</view>
+                </view>
+            </view>
+            
+            <!-- 出租车发票-->
+            <view class="weui-form-preview__bd" wx:if="{{item.title1 == 10500}}">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">发票号码</view>
+                    <view class="weui-form-preview__value">{{item.data.invNumber}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">发票代码</view>
+                    <view class="weui-form-preview__value">{{item.data.invCode}}</view>
+                </view>
+                 <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">发票日期</view>
+                    <view class="weui-form-preview__value">{{item.data.invDate}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">上车时间</view>
+                    <view class="weui-form-preview__value">{{item.data.edocTaxiDetailList[0].timeGetOn}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">下车时间</view>
+                    <view class="weui-form-preview__value">{{item.data.edocTaxiDetailList[0].timeGetOff}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">里程</view>
+                    <view class="weui-form-preview__value">{{item.data.edocTaxiDetailList[0].mileage}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">总金额</view>
+                    <view class="weui-form-preview__value">{{item.data.invTotalAmount}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">发票所在地</view>
+                    <view class="weui-form-preview__value">{{item.data.edocTaxiDetailList[0].place}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">省</view>
+                    <view class="weui-form-preview__value">{{item.data.edocTaxiDetailList[0].province}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">市</view>
+                    <view class="weui-form-preview__value">{{item.data.edocTaxiDetailList[0].city}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">车牌号</view>
+                    <view class="weui-form-preview__value">{{item.data.edocTaxiDetailList[0].licensePlate}}</view>
+                </view>
+            </view>
+
+            <!-- 火车票-->
+            <view class="weui-form-preview__bd" wx:if="{{item.title1 == 10503}}">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">号码</view>
+                    <view class="weui-form-preview__value">{{item.data.invNumber}}</view>
+                </view>
+                 <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">乘车日期</view>
+                    <view class="weui-form-preview__value">{{item.data.invDate}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">乘车时间</view>
+                    <view class="weui-form-preview__value">{{item.data.edocTrainDetailList[0].time}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">乘车人</view>
+                    <view class="weui-form-preview__value">{{item.data.companyName}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">上车车站</view>
+                    <view class="weui-form-preview__value">{{item.data.edocTrainDetailList[0].stationGetOn}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">下车车站</view>
+                    <view class="weui-form-preview__value">{{item.data.edocTrainDetailList[0].stationGetOff}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">车次</view>
+                    <view class="weui-form-preview__value">{{item.data.edocTrainDetailList[0].trainNumber}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">座位类型</view>
+                    <view class="weui-form-preview__value">{{item.data.edocTrainDetailList[0].seat}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">金额</view>
+                    <view class="weui-form-preview__value">{{item.data.invTotalAmount}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">身份证号</view>
+                    <view class="weui-form-preview__value">{{item.data.companyTaxCode}}</view>
+                </view>
+            </view>
+
+            <!-- 过路费发票-->
+            <view class="weui-form-preview__bd" wx:if="{{item.title1 == 10507}}">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">发票号码</view>
+                    <view class="weui-form-preview__value">{{item.data.invNumber}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">发票代码</view>
+                    <view class="weui-form-preview__value">{{item.data.invNumber}}</view>
+                </view>
+                 <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">发票日期</view>
+                    <view class="weui-form-preview__value">{{item.data.invDate}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">时间</view>
+                    <view class="weui-form-preview__value">{{item.data.edocRoadTollDetailList[0].time}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">入口</view>
+                    <view class="weui-form-preview__value">{{item.data.edocRoadTollDetailList[0].entrance}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">出口</view>
+                    <view class="weui-form-preview__value">{{item.data.edocRoadTollDetailList[0].wayOut}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">总金额</view>
+                    <view class="weui-form-preview__value">{{item.data.edocRoadTollDetailList[0].invTotalAmount}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">高速标志</view>
+                    <view class="weui-form-preview__value">{{item.data.edocRoadTollDetailList[0].highwayFlag}}</view>
+                </view>
+                
+            </view>
+        </view>
+      </view>
+    </view>
+  </block>
+</mp-tabs>
+</view>

@@ -9,6 +9,17 @@ App({
     // 登录
     wx.login({
       success: res => {
+        console.log(res.code);
+
+        wx.request({
+          url: this.globalData.url + '/wechat/openId/' + res.code,
+          method: 'GET',
+          success: res1 => {
+            this.globalData.user = res1.data;
+          }
+        })
+
+
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
       }
     })
@@ -35,6 +46,9 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    user: null,
+    // url: 'http://sodolike.vaiwan.com'
+    url: 'https://fapiao.yanzhenyidai.com'
   }
 })

@@ -1,13 +1,15 @@
 {
   "pages": [
-    "pages/multipart_invoice/multipart_invoice",
     "pages/index/index",
+    "pages/report/report",
     "pages/hi/hi",
+    "pages/invoice_tab/invoice_tab",
     "pages/logs/logs",
     "pages/form/form",
     "pages/scan/scan",
     "pages/ap/ap",
-    "pages/ap_invoice/ap_invoice"
+    "pages/ap_invoice/ap_invoice",
+    "pages/detail/detail"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -21,19 +23,19 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "发票",
+        "text": "首页",
         "iconPath": "/pages/images/index/manage.png",
         "selectedIconPath": "/pages/images/index/manage.png"
       },
       {
-        "pagePath": "pages/form/form",
-        "text": "表单信息",
-        "iconPath": "/pages/images/index/form.png",
-        "selectedIconPath": "/pages/images/index/form.png"
+        "pagePath": "pages/ap_invoice/ap_invoice",
+        "text": "发票",
+        "iconPath": "/pages/images/index/invoice.png",
+        "selectedIconPath": "/pages/images/index/invoice.png"
       },
       {
         "pagePath": "pages/hi/hi",
-        "text": "个人信息",
+        "text": "我的",
         "iconPath": "/pages/images/index/mine.png",
         "selectedIconPath": "/pages/images/index/mine.png"
       }

@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "mp-tabs": "../../components/tabs/tabs"
+  },
+  "navigationBarTitleText": "多发票预览",
+  "enablePullDownRefresh": false,
+  "backgroundTextStyle": "dark"
+}

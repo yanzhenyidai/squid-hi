@@ -1,3 +1,5 @@
+const app = getApp();
+
 Page({
   onShareAppMessage() {
     return {
@@ -30,7 +32,7 @@ Page({
     var _this = this;
 
     wx.request({
-      url: 'http://sodolike.vaiwan.com/invoice/save',
+      url: app.globalData.url + '/invoice/save',
       method: 'POST',
       data:{
         'invNumber': this.data.result[3],
@@ -40,13 +42,26 @@ Page({
         'invCheckCode': this.data.result[6],
         'invAmount': this.data.result[4]
       },
-      success:function(data){
-        wx.showToast({
-          title: '成功',
-          success: res => {
-            _this.onLoad();
+      success: res => {
+
+        wx.showLoading({
+          title: '保存中',
+          success: res1 => {
+            wx.navigateTo({
+              url: '/pages/detail/detail?id=' + res.data.id,
+            })
+
+            setTimeout(() => {
+              wx.hideLoading()
+            });
           }
         })
+        // wx.showToast({
+        //   title: '成功',
+        //   success: res => {
+        //     _this.onLoad();
+        //   }
+        // })
       }
     })
   }

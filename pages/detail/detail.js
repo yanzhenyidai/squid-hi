@@ -1,32 +1,50 @@
-// pages/ap/ap.js
+// pages/invoice_tab/invoice_tab.js
 const app = getApp();
 
 Page({
-  
+
   /**
    * 页面的初始数据
    */
   data: {
-    result: []
+    tabs: [],
+    item: '',
+    activeTab: 0,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-
+  onLoad: function(options) {
+    const tabs = [];
     wx.request({
-      url: app.globalData.url + '/invoice/findAll',
+      url: app.globalData.url + '/invoice/findById/' + options.id,
       method: 'POST',
       success: res => {
+        
         this.setData({
-          result: res.data
-        });
-
-        // this.setData.result = res.data;
-        // _this.data.result = res.data;
-        // that.data.result = res.data;
+          tabs: res.data
+        })
       }
+    })
+  },
+
+  onTabClick(e) {
+    const index = e.detail.index
+    this.setData({ 
+      activeTab: index 
+    })
+  },
+
+  onChange(e) {
+    const index = e.detail.index
+    this.setData({ 
+      activeTab: index 
+    })
+  },
+  handleClick(e) {
+    wx.navigateTo({
+      url: './webview',
     })
   },
 

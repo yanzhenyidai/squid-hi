@@ -1,8 +1,16 @@
 // pages/hi/hi.js
+const app = getApp();
+
 Page({
   goTest: function(){
     wx.navigateTo({
-      url: '/pages/multipart_invoice/multipart_invoice',
+      // url: '/pages/multipart_invoice/multipart_invoice',
+      url: '/pages/invoice_tab/invoice_tab?id=2',
+    })
+  },
+  goReport: function(){
+    wx.navigateTo({
+      url: '/pages/report/report',
     })
   },
   goInvoice: function(){
@@ -27,21 +35,26 @@ Page({
       const tempFilePaths = res.tempFilePaths;
       wx.showLoading({
         title: '识别中',
+        
         success: res1 => {
           wx.getFileSystemManager().readFile({
             filePath: tempFilePaths[0],
             encoding: 'base64',
             success: res => {
                 wx.request({
-                  url: 'http://sodolike.vaiwan.com/ocr/glority',
+                  url: app.globalData.url + '/ocr/glority',
                   method: 'POST',
                   data: {
                     'base64Img': res.data
                   },
                   success: res2 => {
-      
+
                     wx.navigateTo({
-                      url: '/pages/multipart_invoice/multipart_invoice?id='+res2.data.id,
+                      url: '/pages/invoice_tab/invoice_tab?id='+res2.data.id,
+                    })
+
+                    setTimeout(function(){
+                      wx.hideLoading()
                     })
                   }
                 })
@@ -49,6 +62,8 @@ Page({
           });
         }
       })
+      
+      
     }
   })
  },

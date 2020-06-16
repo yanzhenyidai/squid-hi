@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "图表",
+  "usingComponents": {
+    "ec-canvas": "../../plugins/ec-canvas/ec-canvas"
+  }
+}

@@ -1,19 +1,49 @@
-// pages/multipart_invoice/multipart_invoice.js
+// pages/invoice_tab/invoice_tab.js
+const app = getApp();
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    invoiceId: ''
+    tabs: [],
+    activeTab: 0,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    this.setData({
-      invoiceId: 32
+  onLoad: function(options) {
+    const tabs = [];
+    wx.request({
+      url: app.globalData.url + '/invoice/findByTaskId/' + options.id,
+      method: 'POST',
+      success: res => {
+        
+        this.setData({
+          tabs: res.data
+        })
+      }
+    })
+  },
+
+  onTabClick(e) {
+    const index = e.detail.index
+    this.setData({ 
+      activeTab: index 
+    })
+  },
+
+  onChange(e) {
+    const index = e.detail.index
+    this.setData({ 
+      activeTab: index 
+    })
+  },
+  handleClick(e) {
+    wx.navigateTo({
+      url: './webview',
     })
   },
 

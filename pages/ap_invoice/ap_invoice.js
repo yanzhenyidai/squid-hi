@@ -1,4 +1,6 @@
 // pages/ap_invoice/ap_invoice.js
+const app = getApp();
+
 Page({
 
   /**
@@ -10,6 +12,9 @@ Page({
 
   details:function(e){
     console.log(e.currentTarget.id);
+    wx.navigateTo({
+      url: '/pages/detail/detail?id=' + e.currentTarget.id,
+    })
   },
 
   /**
@@ -17,19 +22,30 @@ Page({
    */
   onLoad: function (options) {
 
-    wx.request({
-      url: 'http://sodolike.vaiwan.com/invoice/findAll',
-      method: 'POST',
-      success: res => {
-        this.setData({
-          result: res.data
-        });
+    wx.showLoading({
+      title: '加载中',
+      success: res1 => {
+        wx.request({
+          url: app.globalData.url + '/invoice/findAll',
+          method: 'POST',
+          success: res => {
+            console.log(res.data.length);
 
-        // this.setData.result = res.data;
-        // _this.data.result = res.data;
-        // that.data.result = res.data;
+            this.setData({
+              result: res.data
+            });
+
+            setTimeout(function(){
+              wx.hideLoading()
+            },100)
+    
+            // this.setData.result = res.data;
+            // _this.data.result = res.data;
+            // that.data.result = res.data;
+          }
+        })
       }
-    })
+    })    
   },
 
   /**
@@ -64,7 +80,9 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
+    this.onLoad();
 
+    wx.stopPullDownRefresh();
   },
 
   /**

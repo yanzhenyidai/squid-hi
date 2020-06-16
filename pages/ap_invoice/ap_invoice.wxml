@@ -1,33 +1,45 @@
 <view class="page">
     <view class="page__hd">
-        <view class="page__title">所有发票信息</view>
-        <view class="page__desc">发票预览</view>
+        <view class="page__title">发票信息</view>
+        <!-- <view class="page__desc">发票预览</view> -->
     </view>
     <view class="page__bd" wx:for="{{result}}" wx:key="{{item}}">
         <a class="weui-form-a" bindtap="details" id="{{item.id}}">
         <view class="weui-form-preview">
             <view class="weui-form-preview__hd">
                 <view class="weui-form-preview__item">
-                    <view class="weui-form-preview__label">{{item.vendorName}}</view>
+                    <view class="weui-form-preview__label">{{item.invType}}</view>
                     <view class="weui-form-preview__value_in-hd"></view>
                 </view>
             </view>
             <view class="weui-form-preview__bd">
-                <view class="weui-form-preview__item">
+                <view class="weui-form-preview__item" wx:if="{{item.companyName}}">
+                    <view class="weui-form-preview__label">购买方</view>
+                    <view class="weui-form-preview__value">{{item.companyName}}</view>
+                </view>
+                <view class="weui-form-preview__item" wx:if="{{item.invNumber}}">
                     <view class="weui-form-preview__label">发票号码</view>
                     <view class="weui-form-preview__value">{{item.invNumber}}</view>
                 </view>
-                <view class="weui-form-preview__item">
+                <view class="weui-form-preview__item" wx:if="{{item.invCode}}">
                     <view class="weui-form-preview__label">发票代码</view>
                     <view class="weui-form-preview__value">{{item.invCode}}</view>
                 </view>
-                 <view class="weui-form-preview__item">
+                 <view class="weui-form-preview__item" wx:if="{{item.invDate}}">
                     <view class="weui-form-preview__label">发票日期</view>
                     <view class="weui-form-preview__value">{{item.invDate}}</view>
                 </view>
-                <view class="weui-form-preview__item">
+                <view class="weui-form-preview__item" wx:if="{{item.invAmount}}">
                     <view class="weui-form-preview__label">金额</view>
                     <view class="weui-form-preview__value">{{item.invAmount}}</view>
+                </view>
+                 <view class="weui-form-preview__item" wx:if="{{item.invTax}}">
+                    <view class="weui-form-preview__label">税额</view>
+                    <view class="weui-form-preview__value">{{item.invTax}}</view>
+                </view>
+                 <view class="weui-form-preview__item" wx:if="{{item.invTotalAmount}}">
+                    <view class="weui-form-preview__label">合计金额</view>
+                    <view class="weui-form-preview__value">{{item.invTotalAmount}}</view>
                 </view>
             </view>
             <!-- <view class="weui-form-preview__ft">

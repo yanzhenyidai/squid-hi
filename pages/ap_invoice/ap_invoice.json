@@ -1,4 +1,6 @@
 {
-  "navigationBarTitleText": "发票信息预览",
-  "usingComponents": {}
+  "navigationBarTitleText": "发票池预览",
+  "usingComponents": {},
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
 }
