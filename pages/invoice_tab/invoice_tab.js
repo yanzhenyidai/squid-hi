@@ -17,8 +17,11 @@ Page({
   onLoad: function(options) {
     const tabs = [];
     wx.request({
-      url: app.globalData.url + '/invoice/findByTaskId/' + options.id,
+      url: app.globalData.url.invoice + '/invoice/findByTaskId/' + options.id,
       method: 'POST',
+      header:{
+        'Authorization': 'Bearer ' + app.globalData.authInfo.access_token
+      },
       success: res => {
         
         this.setData({

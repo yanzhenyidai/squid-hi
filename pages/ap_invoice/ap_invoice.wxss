@@ -6,7 +6,7 @@ page{
 /* .page__hd {
   padding: 40px;
 } */
-.page__hd {padding: 30px;background-color: white;}
+.page__hd {padding: 30px;}
 .page__title {font-size: 20px;font-weight: bold;}
 
 /* .page__bd {
@@ -38,16 +38,16 @@ page{
   left:52px;
 }
 .weui-form-preview{
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 .weui-form-preview__hd{
   position: relative;
-  padding: 16px;
+  padding: 10px 16px 10px 16px;
   text-align: right;
   line-height: normal;
 }
 .weui-form-preview__bd {
-  line-height: 2.3;
+  line-height: 2.15;
 }
 
 .weui-form-preview__label {
@@ -58,4 +58,14 @@ page{
   color: black;
 }
 
+.weui-form-preview__value_in-hd{
+  font-weight: bold;
+}
+
 /* .weui-btn{width:184px;} */
+.weui-cell_primary {
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+  font-size: 15.25px;
+  font-weight: 400;  
+}

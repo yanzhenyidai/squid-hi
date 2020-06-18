@@ -51,5 +51,18 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+  getUserInfo1: function(e) {
+
+    wx.getUserInfo({
+      success: res => {
+
+        app.globalData.userInfo = res.userInfo
+        this.setData({
+          userInfo: res.userInfo,
+          hasUserInfo: true
+        })
+      }
+    })
   }
 })

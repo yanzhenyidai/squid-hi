@@ -1,12 +1,73 @@
-// pages/hi/hi.js
+// pages/index_v2/index_v2.js
+const base64 = require('../images/base64');
 const app = getApp();
 
 Page({
-  goTest: function(){
-    wx.navigateTo({
-      // url: '/pages/multipart_invoice/multipart_invoice',
-      url: '/pages/invoice_tab/invoice_tab?id=2',
-    })
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    this.setData({
+      icon20: base64.icon20,
+      icon60: base64.icon60
+  });
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+    app.onLaunch();
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
   },
   goCard: function(){
 
@@ -14,7 +75,10 @@ Page({
       complete: (res) => {
 
         wx.request({
-          url: app.globalData.url.invoice + '/wechat/invoice',
+          url: app.globalData.url + '/wechat/invoice',
+          header:{
+            'Authorization': 'Bearer ' + app.globalData.authInfo.access_token
+          },
           data: res.invoiceInfo,
           method: 'POST',
           success: res1 => {
@@ -63,6 +127,9 @@ Page({
                 wx.request({
                   url: app.globalData.url.invoice + '/ocr/glority',
                   method: 'POST',
+                  header:{
+                    'Authorization': 'Bearer ' + app.globalData.authInfo.access_token
+                  },
                   data: {
                     'base64Img': res.data
                   },
@@ -85,68 +152,7 @@ Page({
       
     }
   })
- },
+ }
 
-  /**
-   * 页面的初始数据
-   */
-  data: {
-    base64Img: ''
-  },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

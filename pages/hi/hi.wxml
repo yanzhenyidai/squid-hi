@@ -9,9 +9,9 @@
       <view class="page__bd">
         <view class="weui-panel weui-panel_access" wx:if="{{!hasUserInfo && canIUse}}">
             <view class="weui-panel__bd">
-                <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="none">
+                <navigator url="getUserInfo1" bindtap="getUserInfo1" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
                     <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
-                        <image class="weui-media-box__thumb" src="../images/hi/hi_mine.png" />
+                        <image class="weui-media-box__thumb" src="../images/hi/wechat.png" />
                     </view>
                     <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
                         <view class="weui-media-box__title">

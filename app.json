@@ -1,15 +1,19 @@
 {
   "pages": [
+    "pages/index_v2/index_v2",
+    "pages/scan/scan",
+    
     "pages/index/index",
     "pages/report/report",
     "pages/hi/hi",
     "pages/invoice_tab/invoice_tab",
     "pages/logs/logs",
     "pages/form/form",
-    "pages/scan/scan",
+    
     "pages/ap/ap",
     "pages/ap_invoice/ap_invoice",
     "pages/detail/detail"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -22,7 +26,7 @@
   "tabBar": {
     "list": [
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/index_v2/index_v2",
         "text": "首页",
         "iconPath": "/pages/images/index/manage.png",
         "selectedIconPath": "/pages/images/index/manage.png"

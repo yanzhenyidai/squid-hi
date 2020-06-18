@@ -1,0 +1,90 @@
+<view class="page" data-weui-theme="{{theme}}">
+    <view class="page__hd">
+        <view class="page__title">首页信息</view>
+        <!-- <view class="page__desc">面板</view> -->
+    </view>
+    <view class="page__bd">
+        <view class="weui-panel weui-panel_access">
+            <!-- <view class="weui-panel__bd">
+                <navigator url="/pages/scan/scan" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+                    <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                        <image class="weui-media-box__thumb" src="../images/index/scan.png" style="width: 40px;height: 40px;margin-right: 16px;vertical-align:middle;" />
+                    </view>
+                    <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                        <view class="weui-media-box__title">扫描发票</view>
+                        <view class="weui-media-box__desc">扫描发票二维码，获取发票信息</view>
+                    </view>
+                </navigator>
+                <navigator url="goTest" bindtap="goTest" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+                    <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                        <image class="weui-media-box__thumb" src="../images/index/camera.png" style="width: 40px;height: 40px;margin-right: 16px;vertical-align:middle;" />
+                    </view>
+                    <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                        <view class="weui-media-box__title">多票识别</view>
+                        <view class="weui-media-box__desc">一次性识别多张发票信息</view>
+                    </view>
+                </navigator>
+                <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+                    <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                        <image class="weui-media-box__thumb" src="../images/index/report.png" style="width: 40px;height: 40px;margin-right: 16px;vertical-align:middle;" />
+                    </view>
+                    <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                        <view class="weui-media-box__title">图表</view>
+                        <view class="weui-media-box__desc">预览发票图表信息</view>
+                    </view>
+                </navigator>
+                <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+                    <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                        <image class="weui-media-box__thumb" src="../images/index/card.png" style="width: 40px;height: 40px;margin-right: 16px;vertical-align:middle;" />
+                    </view>
+                    <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                        <view class="weui-media-box__title">微信卡包</view>
+                        <view class="weui-media-box__desc">获取微信卡包发票信息</view>
+                    </view>
+                </navigator>
+            </view> -->
+            
+
+            <view class="weui-panel">
+            <view class="weui-panel__hd">
+                <image src="../images/index/menu.png" style="width: 20px;height: 20px;margin-right: 16px;vertical-align:middle;" />菜单
+            </view>
+            <view class="weui-panel__bd">
+                <view class="weui-media-box weui-media-box_small-appmsg">
+                    <view class="weui-cells weui-cells_in-small-appmsg">
+                        <navigator url="scanInvoice" bindtap="scanInvoice" class="weui-cell weui-cell_example weui-cell_access" hover-class="weui-cell_active">
+                            <view class="weui-cell__hd"><image src="../images/index/scan.png" style="width: 20px;height: 20px;margin-right: 16px;vertical-align:middle;" /></view>
+                            <view class="weui-cell__bd weui-cell_primary">
+                                <view>扫描发票</view>
+                            </view>
+                            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                        </navigator>
+                        <navigator url="goOcr" bindtap="goOcr" class="weui-cell weui-cell_example weui-cell_access" hover-class="weui-cell_active">
+                            <view class="weui-cell__hd"><image src="../images/index/camera.png" style="width: 20px;height: 20px;margin-right: 16px;vertical-align:middle;" /></view>
+                            <view class="weui-cell__bd weui-cell_primary">
+                                <view>多票识别</view>
+                            </view>
+                            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                        </navigator>
+                        <navigator url="goReport" bindtap="goReport" class="weui-cell weui-cell_example weui-cell_access" hover-class="weui-cell_active">
+                            <view class="weui-cell__hd"><image src="../images/index/report.png" style="width: 20px;height: 20px;margin-right: 16px;vertical-align:middle;" /></view>
+                            <view class="weui-cell__bd weui-cell_primary">
+                                <view>图表</view>
+                            </view>
+                            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                        </navigator>
+                        <navigator url="goCard" bindtap="goCard" class="weui-cell weui-cell_example weui-cell_access" hover-class="weui-cell_active">
+                            <view class="weui-cell__hd"><image src="../images/index/card.png" style="width: 20px;height: 20px;margin-right: 16px;vertical-align:middle;" /></view>
+                            <view class="weui-cell__bd weui-cell_primary">
+                                <view>微信卡包</view>
+                            </view>
+                            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                        </navigator>
+                    </view>
+                </view>
+            </view>
+        </view>
+        </view>
+        
+    </view>
+</view>

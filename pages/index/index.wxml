@@ -23,7 +23,7 @@
               </view>
               <view class="weui-grid__label">销项发票</view>
             </a> -->
-            <a class="weui-grid" bindtap="camera">
+            <a class="weui-grid" bindtap="goOcr">
               <view class="weui-grid__icon">
                 <image src="../images/index/camera.png" alt></image>
               </view>
@@ -35,7 +35,7 @@
               </view>
               <view class="weui-grid__label">图表</view>
             </a>
-            <a class="weui-grid" bindtap="">
+            <a class="weui-grid" bindtap="goCard">
               <view class="weui-grid__icon">
                 <image src="../images/index/card.png" alt></image>
               </view>

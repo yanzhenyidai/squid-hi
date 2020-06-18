@@ -7,13 +7,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-    result: []
+    result: null
   },
 
-  details:function(e){
-    console.log(e.currentTarget.id);
+  details: function(e){
     wx.navigateTo({
       url: '/pages/detail/detail?id=' + e.currentTarget.id,
+    })
+  },
+  goIndex: function(e){
+    wx.navigateTo({
+      url: '/pages/index_v2/index_v2',
     })
   },
 
@@ -26,18 +30,19 @@ Page({
       title: '加载中',
       success: res1 => {
         wx.request({
-          url: app.globalData.url + '/invoice/findAll',
+          url: app.globalData.url.invoice + '/invoice/findAll',
+          header:{
+            'Authorization': 'Bearer ' + app.globalData.authInfo.access_token
+          },
           method: 'POST',
           success: res => {
-            console.log(res.data.length);
-
             this.setData({
               result: res.data
             });
 
             setTimeout(function(){
               wx.hideLoading()
-            },100)
+            },1000)
     
             // this.setData.result = res.data;
             // _this.data.result = res.data;

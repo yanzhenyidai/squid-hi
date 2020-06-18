@@ -3,13 +3,19 @@
         <view class="page__title">发票信息</view>
         <!-- <view class="page__desc">发票预览</view> -->
     </view>
+    <block wx:if="{{result == null}}">
+       
+    </block>
+    <block wx:elif="{{result.length > 0}}">
     <view class="page__bd" wx:for="{{result}}" wx:key="{{item}}">
         <a class="weui-form-a" bindtap="details" id="{{item.id}}">
         <view class="weui-form-preview">
             <view class="weui-form-preview__hd">
                 <view class="weui-form-preview__item">
-                    <view class="weui-form-preview__label">{{item.invType}}</view>
-                    <view class="weui-form-preview__value_in-hd"></view>
+                    <view class="weui-form-preview__label">
+                        <image src="{{item.icon}}" style="width: 20px;height: 20px;margin-right: 16px;vertical-align:middle;" />
+                    </view>
+                    <view class="weui-form-preview__value_in-hd"> {{item.invType}}</view>
                 </view>
             </view>
             <view class="weui-form-preview__bd">
@@ -48,4 +54,20 @@
         </view>
         </a>
     </view>
+    </block> 
+    <block wx:else>
+        <view class="weui-panel">
+            <view class="weui-media-box weui-media-box_small-appmsg">
+                <view class="weui-cells weui-cells_in-small-appmsg">
+                    <navigator url="/pages/index_v2/index_v2" open-type="switchTab" class="weui-cell weui-cell_example weui-cell_access" hover-class="weui-cell_active">
+                        <view class="weui-cell__hd"><image src="../images/invoice/add.png" style="width: 20px;height: 20px;margin-right: 16px;vertical-align:middle;" /></view>
+                        <view class="weui-cell__bd weui-cell_primary">
+                            <view>暂无发票，快去首页添加吧</view>
+                        </view>
+                        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                    </navigator>
+                </view>
+            </view>
+        </view>
+    </block>
 </view>

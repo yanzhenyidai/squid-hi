@@ -7,22 +7,38 @@ App({
     wx.setStorageSync('logs', logs)
 
     // 登录
-    wx.login({
-      success: res => {
-        console.log(res.code);
+    wx.showLoading({
+      title: '加载中',
+      success: res2 => {
+        wx.login({
+          success: res => {
+            
+            wx.request({
+              url: this.globalData.url.auth + '/oauth/token' ,
+              method: 'POST',
+              header: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'Authorization': 'Basic d2ViQXBwOjEyMzQ1Ng'
+              },
+              data:{
+                'grant_type': 'password',
+                'username': res.code,
+                'password': '123456',
+                'scope': 'app'
+              },
+              success: res1 => {
+                this.globalData.authInfo = res1.data;
+              }
+            })
 
-        wx.request({
-          url: this.globalData.url + '/wechat/openId/' + res.code,
-          method: 'GET',
-          success: res1 => {
-            this.globalData.user = res1.data;
+            setTimeout(function(){
+              wx.hideLoading()
+            },1000)
+            // 发送 res.code 到后台换取 openId, sessionKey, unionId
           }
         })
-
-
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
       }
-    })
+    });
     // 获取用户信息
     wx.getSetting({
       success: res => {
@@ -47,8 +63,17 @@ App({
   },
   globalData: {
     userInfo: null,
-    user: null,
+    authInfo: null,
+    url: {
+      // invoice: 'http://sodolike.vaiwan.com',
+      // auth: 'http://sodoauth.vaiwan.com',
+      // fapiao: 'https://fapiao.yanzhenyidai.com'
+      invoice: 'https://fapiao.yanzhenyidai.com',
+      auth: 'https://fapiao.yanzhenyidai.com',
+      fapiao: 'https://fapiao.yanzhenyidai.com'
+    }
+    }
     // url: 'http://sodolike.vaiwan.com'
-    url: 'https://fapiao.yanzhenyidai.com'
-  }
+    // url: 'https://fapiao.yanzhenyidai.com'
+ 
 })

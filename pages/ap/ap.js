@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    result: []
+    result: null
   },
 
   /**
@@ -16,8 +16,11 @@ Page({
   onLoad: function (options) {
 
     wx.request({
-      url: app.globalData.url + '/invoice/findAll',
+      url: app.globalData.url.invoice + '/invoice/findAll',
       method: 'POST',
+      header:{
+        'Authorization': 'Bearer ' + app.globalData.authInfo.access_token
+      },
       success: res => {
         this.setData({
           result: res.data
