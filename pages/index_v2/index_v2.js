@@ -54,6 +54,8 @@ Page({
    */
   onPullDownRefresh: function () {
     app.onLaunch();
+
+    wx.stopPullDownRefresh();
   },
 
   /**

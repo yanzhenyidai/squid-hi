@@ -1,19 +1,18 @@
 {
   "pages": [
     "pages/index_v2/index_v2",
-    "pages/scan/scan",
-    
+    "pages/company/company",
     "pages/index/index",
-    "pages/report/report",
+    "pages/ap_invoice/ap_invoice",
     "pages/hi/hi",
+    "pages/scan/scan",
+    "pages/report/report",
     "pages/invoice_tab/invoice_tab",
     "pages/logs/logs",
     "pages/form/form",
-    
     "pages/ap/ap",
-    "pages/ap_invoice/ap_invoice",
-    "pages/detail/detail"
-    
+    "pages/detail/detail",
+    "pages/email/email"
   ],
   "window": {
     "backgroundTextStyle": "light",

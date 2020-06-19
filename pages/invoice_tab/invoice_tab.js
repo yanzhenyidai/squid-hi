@@ -16,19 +16,29 @@ Page({
    */
   onLoad: function(options) {
     const tabs = [];
-    wx.request({
-      url: app.globalData.url.invoice + '/invoice/findByTaskId/' + options.id,
-      method: 'POST',
-      header:{
-        'Authorization': 'Bearer ' + app.globalData.authInfo.access_token
-      },
-      success: res => {
-        
-        this.setData({
-          tabs: res.data
+
+    wx.showLoading({
+      title: '加载中',
+      success: res1 => {
+        wx.request({
+          url: app.globalData.url.invoice + '/invoice/findByTaskId/' + options.id,
+          method: 'POST',
+          header:{
+            'Authorization': 'Bearer ' + app.globalData.authInfo.access_token
+          },
+          success: res => {
+            
+            this.setData({
+              tabs: res.data
+            });
+
+            setTimeout(function(){
+              wx.hideLoading()
+            })
+          }
         })
       }
-    })
+    });
   },
 
   onTabClick(e) {

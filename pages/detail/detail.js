@@ -31,12 +31,12 @@ Page({
             this.setData({
               tabs: res.data
             })
+
+            setTimeout(function(){
+              wx.hideLoading()
+            })
           }
         })
-
-        setTimeout(function(){
-          wx.hideLoading()
-        },100)
       }
     });
   },

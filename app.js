@@ -12,7 +12,8 @@ App({
       success: res2 => {
         wx.login({
           success: res => {
-            
+
+            // 发送 res.code 到后台换取 openId, sessionKey, unionId
             wx.request({
               url: this.globalData.url.auth + '/oauth/token' ,
               method: 'POST',
@@ -28,13 +29,12 @@ App({
               },
               success: res1 => {
                 this.globalData.authInfo = res1.data;
+
+                setTimeout(function(){
+                  wx.hideLoading()
+                })
               }
             })
-
-            setTimeout(function(){
-              wx.hideLoading()
-            },1000)
-            // 发送 res.code 到后台换取 openId, sessionKey, unionId
           }
         })
       }
@@ -65,11 +65,11 @@ App({
     userInfo: null,
     authInfo: null,
     url: {
-      // invoice: 'http://sodolike.vaiwan.com',
-      // auth: 'http://sodoauth.vaiwan.com',
+      invoice: 'http://sodolike.vaiwan.com',
+      auth: 'http://sodoauth.vaiwan.com',
       // fapiao: 'https://fapiao.yanzhenyidai.com'
-      invoice: 'https://fapiao.yanzhenyidai.com',
-      auth: 'https://fapiao.yanzhenyidai.com',
+      // invoice: 'https://fapiao.yanzhenyidai.com',
+      // auth: 'https://fapiao.yanzhenyidai.com',
       fapiao: 'https://fapiao.yanzhenyidai.com'
     }
     }

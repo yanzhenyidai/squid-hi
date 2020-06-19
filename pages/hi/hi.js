@@ -14,6 +14,9 @@ Page({
       url: '../logs/logs'
     })
   },
+  onShow: function() {
+
+  },
   onLoad: function () {
     if (app.globalData.userInfo) {
       this.setData({
@@ -34,7 +37,6 @@ Page({
       // 在没有 open-type=getUserInfo 版本的兼容处理
       wx.getUserInfo({
         success: res => {
-
           app.globalData.userInfo = res.userInfo
           this.setData({
             userInfo: res.userInfo,
@@ -51,17 +53,19 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
-  },
-  getUserInfo1: function(e) {
 
-    wx.getUserInfo({
+    wx.request({
+      url: app.globalData.url.invoice + '/user/save',
+      method: 'POST',
+      header:{
+        'Authorization': 'Bearer ' + app.globalData.authInfo.access_token
+      },
+      data:{
+        'userName': e.detail.userInfo.nickName,
+        'avatarUrl': e.detail.userInfo.avatarUrl
+      },
       success: res => {
-
-        app.globalData.userInfo = res.userInfo
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
+        
       }
     })
   }

@@ -36,10 +36,17 @@ page{
 }
 
 button {
+  line-height: 1.41176471;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 17px;
+  padding: 4px 5px;
+}
+
+/* button {
   display: inline;
   padding: 4px 5px;
-  background-color: white;
-}
+} */
 
 .weui-midea-hox__title__desc{
   padding: 4px 5px;

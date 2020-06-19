@@ -1,0 +1,17 @@
+<mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+
+<mp-form-page>
+    <form id="form" bindsubmit="formSubmit" >
+    <mp-form models="{{formData}}">
+        <mp-cells title="邮箱信息" footer="">
+            <mp-cell prop="email" title="邮箱" ext-class="">
+                <input id="email" name="email" value="{{user.email}}" type="text" data-field="email" class="weui-input" placeholder="邮箱"/>
+            </mp-cell>
+        </mp-cells>
+
+         <view style="margin-top:20px" slot="button">
+            <button class="weui-btn" type="primary" form-type="submit">提交</button>
+        </view>
+    </mp-form>
+    </form>
+</mp-form-page>

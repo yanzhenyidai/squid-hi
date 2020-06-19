@@ -1,0 +1,26 @@
+<mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+
+<mp-form-page>
+    <form id="form" bindsubmit="formSubmit" >
+    <mp-form models="{{formData}}">
+        <mp-cells title="公司信息" footer="">
+            <mp-cell prop="companyName" title="公司名称" ext-class="">
+                <input id="companyName" name="companyName" value="{{company.companyName}}" type="text" data-field="invNumber" class="weui-input" placeholder="公司名称"/>
+            </mp-cell>
+            <mp-cell prop="companyTaxCode" title="公司税号" ext-class="">
+                <input id="companyTaxCode" name="companyTaxCode" value="{{company.companyTaxCode}}" type="text" class="weui-input" placeholder="公司税号"/>
+            </mp-cell>
+            <mp-cell prop="companyAddress" title="地址、电话" ext-class=" weui-cell_vcode">
+                <input id="companyAddress" name="companyAddress" value="{{company.companyAddress}}" type="text" class="weui-input" placeholder="公司地址、电话"/>
+            </mp-cell>
+            <mp-cell prop="companyBank" title="开户行信息" ext-class=" weui-cell_vcode">
+                <input id="companyBank" name="companyBank" value="{{company.companyBank}}" type="text" class="weui-input" data-field="companyBank" placeholder="公司开户行信息"/>
+            </mp-cell>
+        </mp-cells>
+
+         <view style="margin-top:20px" slot="button">
+            <button class="weui-btn" type="primary" form-type="submit">提交</button>
+        </view>
+    </mp-form>
+    </form>
+</mp-form-page>
