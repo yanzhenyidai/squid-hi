@@ -3,6 +3,11 @@
         <view class="page__title">发票信息</view>
         <!-- <view class="page__desc">发票预览</view> -->
     </view>
+    
+    <!-- <view class="weui-panel__hd">
+        <image src="../images/index/invoice.png" style="width: 20px;height: 20px;margin-right: 16px;vertical-align:middle;" />菜单
+    </view> -->
+
     <block wx:if="{{result == null}}">
        
     </block>

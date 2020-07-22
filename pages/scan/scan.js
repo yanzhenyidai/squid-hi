@@ -76,7 +76,7 @@ Page({
             // 'invType': e.detail.value.invType,
             'invDate': e.detail.value.invDate,
             'invCode': e.detail.value.invCode,
-            'invCheckCode': e.detail.value.invCheckCode,
+            'invCheckCode': e.detail.value.checkCode,
             'invAmount': e.detail.value.invAmount
           },
           success: res => {

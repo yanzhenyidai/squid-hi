@@ -65,12 +65,12 @@ App({
     userInfo: null,
     authInfo: null,
     url: {
-      invoice: 'http://sodolike.vaiwan.com',
-      auth: 'http://sodoauth.vaiwan.com',
+      // invoice: 'http://sodolike.vaiwan.com',
+      // auth: 'http://sodoauth.vaiwan.com',
       // fapiao: 'https://fapiao.yanzhenyidai.com'
-      // invoice: 'https://fapiao.yanzhenyidai.com',
-      // auth: 'https://fapiao.yanzhenyidai.com',
-      fapiao: 'https://fapiao.yanzhenyidai.com'
+      invoice: 'https://fapiao.yanzhenyidai.com',
+      auth: 'https://fapiao.yanzhenyidai.com',
+      // fapiao: 'https://fapiao.yanzhenyidai.com'
     }
     }
     // url: 'http://sodolike.vaiwan.com'

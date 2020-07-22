@@ -69,3 +69,7 @@ page{
   font-size: 15.25px;
   font-weight: 400;  
 }
+
+.weui-panel__hd{
+  background-color: white;
+}
