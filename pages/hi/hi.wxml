@@ -16,7 +16,23 @@
             <view class="weui-panel__bd">
                 <view class="weui-media-box weui-media-box_small-appmsg">
                     <view class="weui-cells weui-cells_in-small-appmsg">
-                        <navigator class="weui-cell weui-cell_example weui-cell_access" hover-class="none">
+                        <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="weui-cell weui-cell_example weui-cell_access" style="width:100%;height:56px;">
+                            <view class="weui-cell__hd"><image src="../images/hi/wechat.png" 
+                            style="width: 20px;height: 20px;margin-right: 16px;margin-left:15px;vertical-align:middle;" /></view>
+                            <view class="weui-cell__bd weui-cell_primary">
+                                <view style="text-align:left;">获取微信信息</view>
+                            </view>
+                            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                        </button>
+                        <button open-type="contact" class="weui-cell weui-cell_example weui-cell_access" style="width:100%;height:56px;">
+                            <view class="weui-cell__hd"><image src="../images/hi/help.png" 
+                            style="width: 20px;height: 20px;margin-right: 16px;margin-left:15px;vertical-align:middle;" /></view>
+                            <view class="weui-cell__bd weui-cell_primary">
+                                <view style="text-align:left;">客服</view>
+                            </view>
+                            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                        </button>
+                        <!-- <navigator class="weui-cell weui-cell_example weui-cell_access" hover-class="none">
                             <view class="weui-cell__hd">
                                 <image src="../images/hi/wechat.png" style="width: 20px;height: 20px;margin-right: 16px;vertical-align:middle;" />
                             </view>
@@ -27,6 +43,17 @@
                             </view>
                             <view class="weui-cell__ft weui-cell__ft_in-access"></view>
                         </navigator>
+                        <navigator class="weui-cell weui-cell_example weui-cell_access" hover-class="none">
+                            <view class="weui-cell__hd">
+                                <image src="../images/hi/help.png" style="width: 20px;height: 20px;margin-right: 16px;vertical-align:middle;" />
+                            </view>
+                            <view class="weui-cell__bd weui-cell_primary">
+                                <view>
+                                     <button lang="" open-type="contact" bindgetuserinfo="contact">客服</button>
+                                </view>
+                            </view>
+                            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                        </navigator> -->
                     </view>
                 </view>
 
@@ -86,13 +113,14 @@
                                 </view>
                                 <view class="weui-cell__ft weui-cell__ft_in-access"></view>
                             </navigator>
-                            <navigator url="" class="weui-cell weui-cell_example weui-cell_access" hover-class="weui-cell_active">
-                                <view class="weui-cell__hd"><image src="../images/hi/help.png" style="width: 20px;height: 20px;margin-right: 16px;vertical-align:middle;" /></view>
+                            <button open-type="contact" class="weui-cell weui-cell_example weui-cell_access" style="width:100%">
+                                <view class="weui-cell__hd"><image src="../images/hi/help.png" 
+                                style="width: 20px;height: 20px;margin-right: 16px;margin-left:15px;vertical-align:middle;" /></view>
                                 <view class="weui-cell__bd weui-cell_primary">
-                                    <view>客服</view>
+                                    <view style="text-align:left;">客服</view>
                                 </view>
                                 <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-                            </navigator>
+                            </button>
                         </view>
                     </view>
                 </view>

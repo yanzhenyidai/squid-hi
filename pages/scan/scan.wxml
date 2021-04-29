@@ -1,23 +1,23 @@
 <mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
 
-<mp-form-page title="扫描发票" subtitle="扫描发票二维码信息，或输入发票信息进行关键信息提取">
+<mp-form-page title="扫描二维码" subtitle="手机扫一扫,读取发票二维码信息">
     <form id="form" bindsubmit="formSubmit" >
     <mp-form models="{{formData}}">
         <mp-cells title="信息" footer="">
-            <mp-cell prop="invNumber" title="发票号码" ext-class="">
-                <input id="invNumber" name="invNumber" type="number" data-field="invNumber" class="weui-input" placeholder="例：24987509" value="{{result[3]}}"/>
+            <mp-cell prop="invNumber" title="号码" ext-class="">
+                <input id="invNumber" name="invNumber" type="number" data-field="invNumber" class="weui-input" placeholder="号码" value="{{result[3]}}"/>
             </mp-cell>
-            <mp-cell prop="invCode" title="发票代码" ext-class="">
-                <input id="invCode" name="invCode"  type="number" class="weui-input" placeholder="例：3100193130" value="{{result[2]}}"/>
+            <mp-cell prop="invCode" title="代码" ext-class="">
+                <input id="invCode" name="invCode"  type="number" class="weui-input" placeholder="代码" value="{{result[2]}}"/>
             </mp-cell>
-            <mp-cell prop="invAmount" title="开票金额" ext-class=" weui-cell_vcode">
-                <input id="invAmount" name="invAmount"  type="digit" class="weui-input" placeholder="例：628.57" value="{{result[4]}}"/>
+            <mp-cell prop="invAmount" title="金额" ext-class=" weui-cell_vcode">
+                <input id="invAmount" name="invAmount"  type="digit" class="weui-input" placeholder="金额" value="{{result[4]}}"/>
             </mp-cell>
             <mp-cell prop="checkCode" title="校验码" ext-class=" weui-cell_vcode">
-                <input id="checkCode" name="checkCode"  type="number" class="weui-input" data-field="checkCode" placeholder="例：000377" value="{{result[6]}}"/>
+                <input id="checkCode" name="checkCode"  type="number" class="weui-input" data-field="checkCode" placeholder="校验码（后六位）" value="{{result[6]}}"/>
             </mp-cell>
             <mp-cell prop="date" title="日期" ext-class="">
-             <input id="invDate" name="invDate"  type="number" class="weui-input" placeholder="例：20191113" value="{{result[5]}}"/>
+             <input id="invDate" name="invDate"  type="number" class="weui-input" placeholder="日期格式（20191113）" value="{{result[5]}}"/>
                 <!-- <picker data-field="date" mode="date" value="{{result[5]}}" bindchange="bindDateChange">
                     <view class="weui-input">{{date}}</view>
                 </picker> -->

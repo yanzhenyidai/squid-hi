@@ -42,8 +42,14 @@ button {
   font-size: 15px !important;
   padding-left: 0px !important;
   background-color: white;
+  font-weight: normal !important;
   display: inline;
 }
+button::after {
+
+  border: none;
+  
+  }
 
 /* button {
   display: inline;

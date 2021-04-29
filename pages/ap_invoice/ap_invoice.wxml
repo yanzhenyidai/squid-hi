@@ -1,6 +1,6 @@
 <view class="page">
     <view class="page__hd">
-        <view class="page__title">发票信息</view>
+        <view class="page__title">信息预览</view>
         <!-- <view class="page__desc">发票预览</view> -->
     </view>
     

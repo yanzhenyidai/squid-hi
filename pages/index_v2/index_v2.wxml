@@ -55,7 +55,7 @@
                         <navigator url="scanInvoice" bindtap="scanInvoice" class="weui-cell weui-cell_example weui-cell_access" hover-class="weui-cell_active">
                             <view class="weui-cell__hd"><image src="../images/index/scan.png" style="width: 20px;height: 20px;margin-right: 16px;vertical-align:middle;" /></view>
                             <view class="weui-cell__bd weui-cell_primary">
-                                <view>扫描发票</view>
+                                <view>单票识别</view>
                             </view>
                             <view class="weui-cell__ft weui-cell__ft_in-access"></view>
                         </navigator>
@@ -66,13 +66,13 @@
                             </view>
                             <view class="weui-cell__ft weui-cell__ft_in-access"></view>
                         </navigator>
-                        <navigator url="goReport" bindtap="goReport" class="weui-cell weui-cell_example weui-cell_access" hover-class="weui-cell_active">
+                        <!-- <navigator url="goReport" bindtap="goReport" class="weui-cell weui-cell_example weui-cell_access" hover-class="weui-cell_active">
                             <view class="weui-cell__hd"><image src="../images/index/report.png" style="width: 20px;height: 20px;margin-right: 16px;vertical-align:middle;" /></view>
                             <view class="weui-cell__bd weui-cell_primary">
                                 <view>图表</view>
                             </view>
                             <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-                        </navigator>
+                        </navigator> -->
                         <navigator url="goCard" bindtap="goCard" class="weui-cell weui-cell_example weui-cell_access" hover-class="weui-cell_active">
                             <view class="weui-cell__hd"><image src="../images/index/card.png" style="width: 20px;height: 20px;margin-right: 16px;vertical-align:middle;" /></view>
                             <view class="weui-cell__bd weui-cell_primary">
