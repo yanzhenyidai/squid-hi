@@ -1,0 +1,45 @@
+<view class="page" data-weui-theme="{{theme}}">
+<view class="page__hd">
+		<view class="page__title">票据采集</view>
+		<view class="page__desc">采集报销单封面、票据、附件信息</view>
+	</view>
+
+  <view class="page-section page-section-spacing swiper">
+      <swiper
+        indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}"
+        interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">
+        <block wx:for="{{coverList}}" wx:key="index">
+          <swiper-item>
+            <image src="{{coverList[index]}}"/>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+
+  <view class="weui-grids">
+    <a class="weui-grid" bindtap="goCover">
+      <view class="weui-grid__icon">
+        <image src="../../images/index/cover.png" alt></image>
+      </view>
+      <view class="weui-grid__label">封面采集</view>
+    </a>
+    
+    <a class="weui-grid" bindtap="goInvoice">
+      <view class="weui-grid__icon">
+        <image src="../../images/index/invoice_collect.png" alt></image>
+      </view>
+      <view class="weui-grid__label">发票采集</view>
+    </a>
+
+    <a class="weui-grid" bindtap="goFile">
+      <view class="weui-grid__icon">
+        <image src="../../images/index/file.png" alt></image>
+      </view>
+      <view class="weui-grid__label">附件采集</view>
+    </a>
+  </view>
+
+  <view class="btn-area" id="buttonContainer">
+    <button class="weui-btn" type="primary" bindtap="submitBill">提交</button>
+  </view>
+</view>

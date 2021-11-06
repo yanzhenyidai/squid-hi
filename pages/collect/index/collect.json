@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "票据采集",
+  "usingComponents": {},
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}

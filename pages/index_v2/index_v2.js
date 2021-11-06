@@ -154,7 +154,9 @@ Page({
       
     }
   })
- }
-
-
+ },goCollect:function(){
+  wx.navigateTo({
+    url: '/pages/collect/index/collect',
+  })
+}
 })

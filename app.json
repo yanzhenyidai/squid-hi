@@ -1,15 +1,16 @@
 {
   "pages": [
+    
+    
+    "pages/collect/index/collect",
     "pages/index_v2/index_v2",
     "pages/invoice_tab/invoice_tab",
-    
     "pages/company/company",
     "pages/index/index",
     "pages/ap_invoice/ap_invoice",
     "pages/hi/hi",
     "pages/scan/scan",
     "pages/report/report",
-    
     "pages/logs/logs",
     "pages/form/form",
     "pages/ap/ap",
